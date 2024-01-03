@@ -1,0 +1,16 @@
+trigger:
+- main
+
+pool: Fortify-test
+steps:
+
+- task: FortifySCA@7
+  inputs:
+    applicationType: 'other'
+    fortifyBuildId: 'azure-test'
+    fortifyScanType: 'LocalScan'
+    runFortifyUpload: true
+    fortifyServerName: 'ssc'
+    fortifyApplicationName: 'Azure-test'
+    fortifyApplicationVersion: '1.0'
+
